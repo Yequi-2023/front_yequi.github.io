@@ -15,6 +15,7 @@ import {
     TextField,
     Typography
 } from '@mui/material';
+import '../src/styles/Login.css'
 // import Inicio from '../src/components/Inicio';
 
 const URL = 'http://127.0.0.1:8000/mi_api/'

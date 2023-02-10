@@ -1,12 +1,12 @@
 import React from 'react'
+import { Inicio } from './components/Inicio';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom"
 import Login from '../schemas/Login';
-import { Inicio } from './components/Inicio';
-import './styles/Login.css'
+
 import './App.css'
 
 
