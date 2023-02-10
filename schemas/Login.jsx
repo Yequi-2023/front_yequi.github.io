@@ -15,7 +15,7 @@ import {
     TextField,
     Typography
 } from '@mui/material';
-import Home from '../schemas/Home';
+// import Inicio from '../src/components/Inicio';
 
 const URL = 'http://127.0.0.1:8000/mi_api/'
 
@@ -64,55 +64,69 @@ function Login() {
         console.log('credenciales', loginData);
     };
     return (
-        <div className="App" >
-           <Container maxWidth="sm">
-                <Grid
+        <div className="contenedor-general-login" >
+            <img className='logo' src="/logo.png" alt="logo" />
+            <div className='contenido-login'>
+                <div className='decoracion'>
+                    {/* <img src="/equipo-logo.png" alt="" /> */}
+                </div>
+                <Container className='login' /*maxWidth="sm"*/>
+                    <div className='contenedor-imagen-logo-usuario'>
+                        <img src="/logo-usuario.png" alt="" />
+                    </div>
+                    <Grid /*
                     container
                     direction="column"
                     alignItems="center"
                     justifyContent="center"
-                    sx={{ minHeight: '100vh' }}>
-                    <Grid item>
-                        <Paper sx={{ padding: '1.2em', borderRadius: '0.5em' }}>
-                            <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>
-                                Iniciar sesión
-                            </Typography>
-                            <Box component="form" onSubmit={handleSubmit}>
-                                <TextField
-                                    type="text"
-                                    name="usuario"
-                                    fullWidth
-                                    label="Usuario"
-                                    inputProps={{ maxLength: 10 }}
-                                    sx={{ mt: 2, mb: 1.5 }}
-                                    onChange={dataLogin}
-                                    value={loginData.usuario}
-                                    required
-                                />
-                                <TextField
-                                    type="password"
-                                    name="contrasena"
-                                    fullWidth
-                                    label="Contraseña"
-                                    inputProps={{ maxLength: 4 }}
-                                    sx={{ mt: 1.5, mb: 1.5 }}
-                                    onChange={dataLogin}
-                                    value={loginData.contrasena}
-                                    required
-                                />
-                                <Button
-                                    fullWidth
-                                    type="submit"
-                                    variant="contained"
-                                    sx={{ mt: 1.5, mb: 3 }}
-                                    onClick={fetchData} >
+                    sx={{ minHeight: '100vh' }}*/>
+                        <Grid /*item*/>
+                            <Paper className='contenedor-inputs' /*sx={{ padding: '1.2em', borderRadius: '0.5em' }}*/>
+                                {/* <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>
                                     Iniciar sesión
-                                </Button>
-                            </Box>
-                        </Paper>
+                                </Typography> */}
+                                <Box /*component="form"*/ className='caja-login' onSubmit={handleSubmit}>
+                                    <label htmlFor="usuario"> Usuario *</label>
+                                    <TextField
+                                        type="text"
+                                        name="usuario"
+                                        // fullWidth
+                                        // label="Usuario"
+                                        inputProps={{ maxLength: 10 }}
+                                        /*sx={{ mt: 2, mb: 1.5 }}*/
+                                        onChange={dataLogin}
+                                        value={loginData.usuario}
+                                        className='input-login'
+                                        required
+                                    />
+                                    <label htmlFor="contrasena"> Contrasena *</label>
+                                    <TextField
+                                        type="password"
+                                        name="contrasena"
+                                        // fullWidth
+                                        // label="Contraseña"
+                                        inputProps={{ maxLength: 4 }}
+                                        /*sx={{ mt: 1.5, mb: 1.5 }}*/
+                                        onChange={dataLogin}
+                                        value={loginData.contrasena}
+                                        className='input-login'
+                                        required
+                                    />
+                                    <Button
+                                        fullWidth
+                                        type="submit"
+                                        variant="contained"
+                                        /*sx={{ mt: 1.5, mb: 3 }}*/
+                                        className='boton-iniciar-sesion'
+                                        onClick={fetchData} >
+                                        Iniciar sesión
+                                    </Button>
+                                </Box>
+                            </Paper>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Container>
+                </Container>
+            </div>
         </div>
     )
 }

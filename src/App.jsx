@@ -1,4 +1,3 @@
-import './App.css'
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -6,7 +5,9 @@ import {
   Route
 } from "react-router-dom"
 import Login from '../schemas/Login';
-import Home from '../schemas/Home';
+import { Inicio } from './components/Inicio';
+import './styles/Login.css'
+import './App.css'
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login/>} />
           <Route exact path="/login" element={<Login/>} />
-          <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/inicio" element={<Inicio/>} />
         </Routes>
       </Router>
     </div>
