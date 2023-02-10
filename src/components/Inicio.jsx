@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Inicio.css'
+import { Link } from 'react-router-dom'
 
 export const Inicio = () => {
+
+    const [usuario, setUsuario] = useState("")
+
   return (
     <div className='contenedor-inicio'>
         <nav className='navbar-inicio'>
@@ -23,12 +27,12 @@ export const Inicio = () => {
                 </div>
             </div>
             <div className='contenedor-inicio-transacciones'>
-                <div className='card'>
+                <Link to="/retiro" className='card' >
                     <div className='card-img'>
                         <img src="/logo-retiro.png" alt="logo-retiro" />
                     </div>
                     <h4>RETIRO</h4>
-                </div>
+                </Link>
                 <div className='card'>
                     <div className='card-img'>
                         <img src="/logo-transferencia.png" alt="logo-transferencia" />

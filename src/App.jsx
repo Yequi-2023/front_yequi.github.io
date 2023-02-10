@@ -8,6 +8,7 @@ import {
 import Login from '../schemas/Login';
 
 import './App.css'
+import Retiro from './components/Retiro';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" element={<Login/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/inicio" element={<Inicio/>} />
+          <Route exact path="/retiro" element={<Retiro/>} />
         </Routes>
       </Router>
     </div>

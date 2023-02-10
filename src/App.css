@@ -3,3 +3,52 @@
   height: 100vh;
 }
 
+.navbar {
+  width: 100%;
+  /* padding-top: 10px; */
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.navbar .logo {
+  margin-left: 10px;
+  background: url('/logo.png') center no-repeat;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.navbar .logo-usuario {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.saldo-navbar {
+  position: absolute;
+  left: 35%;
+  margin: 0 auto;
+  width: 30%;
+  background: #7312EF;
+  color: white;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.saldo-navbar h2,.saldo-navbar h3{
+  margin: 0;
+}
+
+.logo-usuario img {
+  width: 100px;
+}
