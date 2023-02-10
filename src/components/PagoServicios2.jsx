@@ -13,27 +13,30 @@ const PagoServicios2 = () => {
   };
 
   return (
-    <div>
+    <div className="contenedor-servicios">
       <Navbar />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="reference">Número de Referencia:</label>
-        <input
-          type="text"
-          id="reference"
-          value={referenceNumber}
-          onChange={(event) => setReferenceNumber(event.target.value)}
-        />
+      <div className="servicios-publicos">
+        <h2>PAGO DE SERVICIOS PUBLICOS</h2>
+        <form className="formulario-servicios-publicos" onSubmit={handleSubmit}>
+          <label htmlFor="reference">Número de Referencia:</label>
+          <input
+            type="text"
+            id="reference"
+            value={referenceNumber}
+            onChange={(event) => setReferenceNumber(event.target.value)}
+          />
 
-        <label htmlFor="amount">Monto a Pagar:</label>
-        <input
-          type="number"
-          id="amount"
-          value={paymentAmount}
-          onChange={(event) => setPaymentAmount(event.target.value)}
-        />
+          <label htmlFor="amount">Monto a Pagar:</label>
+          <input
+            type="number"
+            id="amount"
+            value={paymentAmount}
+            onChange={(event) => setPaymentAmount(event.target.value)}
+          />
 
-        <button type="submit">Pagar Servicio</button>
-      </form>
+          <button type="submit">Pagar Servicio</button>
+        </form>
+      </div>
     </div>
   );
 };
