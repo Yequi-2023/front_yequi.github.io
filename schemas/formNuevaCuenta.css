@@ -1,0 +1,85 @@
+.nuevaCuenta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.CNuevaCuenta {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.CNuevaCuenta h2 {
+    font-family: Avenir;
+    padding-top: 50px;
+    font-size: 50px;
+}
+
+.CNuevaCuenta p {
+    width: 80%;
+    font-family: Avenir;
+    font-size: 20px;
+}
+
+.CFormulario {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+}
+
+.CFormulario h2 {
+    font-family: Avenir;
+    margin: 0;
+    font-size: 30px;
+}
+
+.formulario {
+    width: 100%;
+}
+
+.contenedorFormulario {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contenedorFormulario div {
+    display: flex;
+    width: 40%;
+    text-align: start;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.contenedorFormulario input,
+.contenedorFormulario select {
+    margin-top: 10px;
+    padding: 12px 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+input {
+    border: 1px solid #d6d6d6;
+}
+
+.formulario button {
+    display: flex;
+    margin: 0 30px 50px auto;
+    padding: 8px 30px;
+    font-size: 16px;
+    color: #3f2727;
+    border-color: #000;
+    text-decoration: none;
+}
