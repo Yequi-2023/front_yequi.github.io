@@ -115,7 +115,9 @@ function FormNuevaCuenta() {
                 </div>
               </div>
 
-              <button type="submit">Aceptar</button>
+              <button className="btn" type="submit">
+                ACEPTAR
+              </button>
             </form>
           </div>
         </div>
