@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logout from '@mui/icons-material/Logout';
+import '../styles/Navbar.css'
 import {
     Avatar,
     IconButton,
@@ -54,15 +55,12 @@ export const Navbar = () => {
             <div className='logo-usuario'>
                 <h2 className="nombre-usuario">{inputValida.nombre}</h2>
                 <Tooltip title="Account settings">
-                    <IconButton
+                    <IconButton className='icon-button'
                         onClick={handleClick}
-                        size="small"
-                        sx={{ ml: 2 }}
                         aria-controls={open ? 'account-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}>
-                        <Avatar
-                            sx={{ width: 80, height: 80 }}
+                        <Avatar className='avatar-icon'
                             src="/logo-usuario.png"></Avatar>
                     </IconButton>
                 </Tooltip>
