@@ -17,6 +17,7 @@ import {
 } from '@mui/material';
 import '../src/styles/Login.css'
 // import Inicio from '../src/components/Inicio';
+import { Link, useNavigate } from "react-router-dom"
 
 const URL = 'http://127.0.0.1:8000/mi_api/'
 
@@ -26,6 +27,7 @@ function Login() {
         usuario: '',
         contrasena: '',
     });
+    const navigate = useNavigate()
 
     const fetchData = async () => {
         try {
@@ -36,13 +38,13 @@ function Login() {
             });
             if (datos.ok) {
                 const data = await datos.json()
-                setInputValida(data)
                 if (data == 'error') {
                     alert("Credenciales incorrectas")
                     window.location.reload(true)
                 }
                 else {
-                    alert("Bienvenida " + data)
+                    setInputValida(data)
+                    navigate('/inicio?' + loginData.usuario)
                 }
             }
         } catch (error) {
@@ -126,7 +128,7 @@ function Login() {
                             </Paper>
                         </Grid>
                     </Grid>
-                <a href="#">Crear Cuenta</a>
+                <Link to="/crear_usuario">Crear usuario</Link>
                 </Container>
             </div>
         </div>
