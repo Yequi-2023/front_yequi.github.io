@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { Navbar } from "../layouts/Navbar";
 import "../styles/PagoServicios2.css";
@@ -6,11 +6,30 @@ import "../styles/PagoServicios2.css";
 const PagoServicios2 = () => {
   const [referenceNumber, setReferenceNumber] = useState("");
   const [paymentAmount, setPaymentAmount] = useState(0);
+  const [infoServicios, setInforServicios] = useState([])
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Enviar los datos a un servidor, procesar el pago, etc.
   };
+  const fetchData = async () => {
+    try {
+      const datos = await fetch('http://127.0.0.1:8000/mi_api/mostrar_servicios_publicos', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" }
+      });
+      if (datos.ok) {
+        const data = await datos.json()
+        setInforServicios(data)
+        console.log(data)
+      }
+    } catch (error) {
+      console.log("El error es", error);
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <div className="contenedor-servicios">
@@ -25,7 +44,17 @@ const PagoServicios2 = () => {
             value={referenceNumber}
             onChange={(event) => setReferenceNumber(event.target.value)}
           />
-
+          <label htmlFor="tipo-servicio">Empresa Convenio:</label>
+          <div className="sidebar-box">
+            <select className="styled-select">
+              <option>{infoServicios[0]}</option>
+              <option>{infoServicios[1]}</option>
+              <option>{infoServicios[2]}</option>
+              <option>{infoServicios[3]}</option>
+              <option>{infoServicios[4]}</option>
+              <option>{infoServicios[5]}</option>
+            </select>
+          </div>
           <label htmlFor="amount">Monto a Pagar:</label>
           <input
             type="number"
@@ -33,11 +62,10 @@ const PagoServicios2 = () => {
             value={paymentAmount}
             onChange={(event) => setPaymentAmount(event.target.value)}
           />
-
           <button type="submit">Pagar Servicio</button>
         </form>
       </div>
-    </div>
+    </div >
   );
 };
 
