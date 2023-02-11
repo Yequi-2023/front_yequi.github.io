@@ -1,11 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import md5 from 'md5'
-import {
-    BrowserRouter,
-    Routes,
-    Route
-} from "react-router-dom"
+
 import {
     Box,
     Button,
@@ -17,40 +12,18 @@ import {
 } from '@mui/material';
 import '../src/styles/Login.css'
 // import Inicio from '../src/components/Inicio';
-import { Link, useNavigate } from "react-router-dom"
+// import { Link, useNavigate } from "react-router-dom"
 
-const URL = 'http://127.0.0.1:8000/mi_api/'
 
-function Login() {
-    const [inputValida, setInputValida] = useState([""]);
+
+const Login = ({ getLogin }) => {
     const [loginData, setLoginData] = useState({
         usuario: '',
         contrasena: '',
     });
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    const fetchData = async () => {
-        try {
-            const datos = await fetch(URL + 'login', {
-                method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ 'usuario': loginData.usuario, 'contrasena': md5(loginData.contrasena) })
-            });
-            if (datos.ok) {
-                const data = await datos.json()
-                if (data == 'error') {
-                    alert("Credenciales incorrectas")
-                    window.location.reload(true)
-                }
-                else {
-                    setInputValida(data)
-                    navigate('/inicio?' + loginData.usuario)
-                }
-            }
-        } catch (error) {
-            console.log("El error es", error);
-        }
-    }
+
     const dataLogin = (e) => {
         let value = e.target.value;
         if (e.target.name === 'usuario') {
@@ -62,10 +35,6 @@ function Login() {
         setLoginData({ ...loginData, [e.target.name]: value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('credenciales', loginData);
-    };
     return (
         <div className="contenedor-general-login" >
             <img className='logo' src="/logo.png" alt="logo" />
@@ -88,7 +57,7 @@ function Login() {
                                 {/* <Typography variant="h4" sx={{ mt: 1, mb: 1 }}>
                                     Iniciar sesión
                                 </Typography> */}
-                                <Box /*component="form"*/ className='caja-login' onSubmit={handleSubmit}>
+                                <Box /*component="form"*/ className='caja-login'>
                                     <label htmlFor="usuario"> Usuario *</label>
                                     <TextField
                                         type="text"
@@ -121,14 +90,14 @@ function Login() {
                                         variant="contained"
                                         /*sx={{ mt: 1.5, mb: 3 }}*/
                                         className='boton-iniciar-sesion'
-                                        onClick={fetchData} >
+                                        onClick={(e) => getLogin(loginData)} >
                                         Iniciar sesión
                                     </Button>
                                 </Box>
                             </Paper>
                         </Grid>
                     </Grid>
-                <Link to="/crear_usuario">Crear usuario</Link>
+                {/* <Link to="/crear_usuario">Crear usuario</Link> */}
                 </Container>
             </div>
         </div>
