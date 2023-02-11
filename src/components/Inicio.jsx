@@ -25,6 +25,7 @@ export const Inicio = () => {
   const logout = () => {
     localStorage.removeItem("userLogin");
     localStorage.removeItem("usuario");
+    localStorage.removeItem("tipoServicio");
     window.location.reload(true);
   };
 

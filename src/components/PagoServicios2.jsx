@@ -6,31 +6,13 @@ import "../styles/PagoServicios2.css";
 const PagoServicios2 = () => {
   const [referenceNumber, setReferenceNumber] = useState("");
   const [paymentAmount, setPaymentAmount] = useState(0);
-  const [infoServicios, setInforServicios] = useState([])
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Enviar los datos a un servidor, procesar el pago, etc.
   };
-  const fetchData = async () => {
-    try {
-      const datos = await fetch('http://127.0.0.1:8000/mi_api/mostrar_servicios_publicos', {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" }
-      });
-      if (datos.ok) {
-        const data = await datos.json()
-        setInforServicios(data)
-        console.log(data)
-      }
-    } catch (error) {
-      console.log("El error es", error);
-    }
-  }
-  useEffect(() => {
-    fetchData()
-  }, [])
-
+  
   return (
     <div className="contenedor-servicios">
       <Navbar />
@@ -57,5 +39,4 @@ const PagoServicios2 = () => {
     </div >
   );
 };
-
 export default PagoServicios2;
