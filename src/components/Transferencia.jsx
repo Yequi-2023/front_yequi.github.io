@@ -42,7 +42,7 @@ const Transferencia = () => {
                         <input type="number" name='valor' required />
                     </div>
 
-                    <button type='submit'>Generar Codigo</button>
+                    <button type='submit'>Transferir</button>
                 </form>
             </div>
         </div>
