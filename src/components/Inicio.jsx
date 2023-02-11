@@ -1,18 +1,18 @@
-import Logout from '@mui/icons-material/Logout';
+import Logout from "@mui/icons-material/Logout";
 import {
-    Avatar,
-    IconButton,
-    ListItemIcon,
-    Menu,
-    MenuItem,
-    Tooltip
-} from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Inicio.css';
+  Avatar,
+  IconButton,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Tooltip,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/Inicio.css";
 
 export const Inicio = () => {
-  const [inputValida, setInputValida] = useState(['']);
+  const [inputValida, setInputValida] = useState([""]);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,24 +23,24 @@ export const Inicio = () => {
   };
 
   const logout = () => {
-    localStorage.removeItem('userLogin');
-    localStorage.removeItem('usuario');
+    localStorage.removeItem("userLogin");
+    localStorage.removeItem("usuario");
     window.location.reload(true);
   };
 
   const fetchData = async () => {
     try {
-      const datos = await fetch('http://127.0.0.1:8000/mi_api/mostrar_datos', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ usuario: localStorage.getItem('usuario') }),
+      const datos = await fetch("http://127.0.0.1:8000/mi_api/mostrar_datos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usuario: localStorage.getItem("usuario") }),
       });
       if (datos.ok) {
         const data = await datos.json();
         setInputValida(data[0]);
       }
     } catch (error) {
-      console.log('El error es', error);
+      console.log("El error es", error);
     }
   };
   useEffect(() => {
@@ -57,12 +57,14 @@ export const Inicio = () => {
               onClick={handleClick}
               size="small"
               sx={{ ml: 2 }}
-              aria-controls={open ? 'account-menu' : undefined}
+              aria-controls={open ? "account-menu" : undefined}
               aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}>
+              aria-expanded={open ? "true" : undefined}
+            >
               <Avatar
                 sx={{ width: 80, height: 80 }}
-                src="/logo-usuario.png"></Avatar>
+                src="/logo-usuario.png"
+              ></Avatar>
             </IconButton>
           </Tooltip>
         </div>
@@ -75,31 +77,32 @@ export const Inicio = () => {
           PaperProps={{
             elevation: 0,
             sx: {
-              overflow: 'visible',
-              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+              overflow: "visible",
+              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
               mt: 1.5,
-              '& .MuiAvatar-root': {
+              "& .MuiAvatar-root": {
                 width: 32,
                 height: 32,
                 ml: -0.5,
                 mr: 1,
               },
-              '&:before': {
+              "&:before": {
                 content: '""',
-                display: 'block',
-                position: 'absolute',
+                display: "block",
+                position: "absolute",
                 top: 0,
                 right: 14,
                 width: 10,
                 height: 10,
-                bgcolor: 'background.paper',
-                transform: 'translateY(-50%) rotate(45deg)',
+                bgcolor: "background.paper",
+                transform: "translateY(-50%) rotate(45deg)",
                 zIndex: 0,
               },
             },
           }}
-          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+          transformOrigin={{ horizontal: "right", vertical: "top" }}
+          anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+        >
           <MenuItem onClick={logout}>
             <ListItemIcon>
               <Logout fontSize="small" />
@@ -143,14 +146,14 @@ export const Inicio = () => {
               PAGO DE SERVICIOS <br></br>PUBLICOS
             </h4>
           </Link>
-          <div className="card">
+          <Link to="/tarjetasdecredito" className="card">
             <div className="card-img">
               <img src="/logo-creditos.png" alt="logo-creditos" />
             </div>
             <h4>
               TARJETA DE CREDITO <br></br>Y CREDITOS
             </h4>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
