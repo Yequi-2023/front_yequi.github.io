@@ -33,18 +33,18 @@ export const Inicio = () => {
                     </div>
                     <h4>RETIRO</h4>
                 </Link>
-                <div className='card'>
+                <Link to="/transferencia" className='card'>
                     <div className='card-img'>
                         <img src="/logo-transferencia.png" alt="logo-transferencia" />
                     </div>
                     <h4>TRANSFERENCIA</h4>
-                </div>
-                <div className='card'>
+                </Link>
+                <Link to="/pagoservicios" className='card'>
                     <div className='card-img'>
                         <img src="/logo-servicios-publicos.png" alt="logo-servicios-publicos" />
                     </div>
                     <h4>PAGO DE SERVICIOS <br></br>PUBLICOS</h4>
-                </div>
+                </Link>
                 <div className='card'>
                     <div className='card-img'>
                         <img src="/logo-creditos.png" alt="logo-creditos" />

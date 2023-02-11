@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
     return (
         <nav className='navbar'>
-            <div className='logo'></div>
+            <Link to='/inicio' className='logo'></Link>
             <div className='saldo-navbar'>
                 <h2>SALDO</h2>
                 <h3>2.000.000.0</h3>
