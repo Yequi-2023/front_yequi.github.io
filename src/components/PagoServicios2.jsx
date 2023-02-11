@@ -44,17 +44,6 @@ const PagoServicios2 = () => {
             value={referenceNumber}
             onChange={(event) => setReferenceNumber(event.target.value)}
           />
-          <label htmlFor="tipo-servicio">Empresa Convenio:</label>
-          <div className="sidebar-box">
-            <select className="styled-select">
-              <option>{infoServicios[0]}</option>
-              <option>{infoServicios[1]}</option>
-              <option>{infoServicios[2]}</option>
-              <option>{infoServicios[3]}</option>
-              <option>{infoServicios[4]}</option>
-              <option>{infoServicios[5]}</option>
-            </select>
-          </div>
           <label htmlFor="amount">Monto a Pagar:</label>
           <input
             type="number"
