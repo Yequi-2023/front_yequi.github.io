@@ -7,6 +7,7 @@ import "./App.css";
 import Retiro from "./components/Retiro";
 import PagoServicios2 from "./components/PagoServicios2";
 import Transferencia from "./components/Transferencia";
+import PagoServicios from "./components/PagoServicios";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/retiro" element={<Retiro />} />
           <Route exact path="/pagoserviciospublicos" element={<PagoServicios2 />}/>
           <Route exact path="/transferencia" element={<Transferencia />} />
+          <Route exact path="/pagoservicios" element={<PagoServicios />} />
         </Routes>
       </Router>
     </div>
