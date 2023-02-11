@@ -62,17 +62,21 @@
     width: 300px !important;
     text-align: center !important;
     justify-content: center !important;
+    
 }
 .input-login div {
     /* margin: auto !important; */
     max-width: 600px !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 0px !important;
     margin-bottom: 20px !important;
     height: 40px !important;
     justify-content: center !important;
     text-align: center !important;
 
     /* background-color: #BC87FF !important;     */
+}
+.input-login input {
+    padding: 7.5px 14px !important;
 }
 
 .boton-iniciar-sesion {

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 //import './App.css'
 import "../styles/formNuevaCuenta.css";
 
@@ -38,7 +37,7 @@ function FormNuevaCuenta() {
             >
               <div className="contenedorFormulario">
                 <div>
-                  <label for="nombres">Nombres</label>
+                  <label htmlFor="nombres">Nombres</label>
                   <input
                     type="text"
                     name="nombres"
@@ -47,7 +46,7 @@ function FormNuevaCuenta() {
                   />
                 </div>
                 <div>
-                  <label for="apellidos">Apellidos</label>
+                  <label htmlFor="apellidos">Apellidos</label>
                   <input
                     type="text"
                     name="apellidos"
@@ -56,7 +55,7 @@ function FormNuevaCuenta() {
                   />
                 </div>
                 <div>
-                  <label for="tipoDocumento">Tipo de documento</label>
+                  <label htmlFor="tipoDocumento">Tipo de documento</label>
                   <select name="tipoDocumento">
                     <option value="value1">Cedula ciudadania</option>
                     <option value="value2">Cedula extranjeria</option>
@@ -64,7 +63,7 @@ function FormNuevaCuenta() {
                   </select>
                 </div>
                 <div>
-                  <label for="documento">Numero de documento</label>
+                  <label htmlFor="documento">Numero de documento</label>
                   <input
                     type="text"
                     name="documento"
@@ -73,7 +72,7 @@ function FormNuevaCuenta() {
                   />
                 </div>
                 <div>
-                  <label for="correo">Correo electrónico</label>
+                  <label htmlFor="correo">Correo electrónico</label>
                   <input
                     type="email"
                     name="correo"
@@ -82,35 +81,35 @@ function FormNuevaCuenta() {
                   />
                 </div>
                 <div>
-                  <label for="celular">Celular</label>
+                  <label htmlFor="celular">Celular</label>
                   <input
                     type="number"
                     name="celular"
                     placeholder="Ingrese número celular"
-                    maxlength={"10"}
-                    minlength={"10"}
+                    maxLength={"10"}
+                    minLength={"10"}
                     required
                   />
                 </div>
                 <div>
-                  <label for="contraseña">Contraseña</label>
+                  <label htmlFor="contraseña">Contraseña</label>
                   <input
                     type="password"
                     name="contraseña"
                     placeholder="Ingrese contraseña"
-                    maxlength={"4"}
-                    minlength={"4"}
+                    maxLength={"4"}
+                    minLength={"4"}
                     required
                   />
                 </div>
                 <div>
-                  <label for="verificar">Verificar contraseña</label>
+                  <label htmlFor="verificar">Verificar contraseña</label>
                   <input
                     type="password"
                     name="verificar"
                     placeholder="Ingrese contraseña"
-                    maxlength={"4"}
-                    minlength={"4"}
+                    maxLength={"4"}
+                    minLength={"4"}
                     required
                   />
                 </div>
