@@ -15,6 +15,7 @@ import TarjetasDeCredito from './components/TarjetasDeCredito';
 import Transferencia from './components/Transferencia';
 import PagoServicios from './components/PagoServicios';
 import FormNuevaCuenta from './components/FormNuevaCuenta';
+import { Historial } from './components/Historial';
 
 const App = () => {
   const [login, setLogin] = useState();
@@ -73,6 +74,7 @@ const App = () => {
             <Route path="/pagoserviciospublicos" element={<PagoServicios2 />} />
             <Route path="/transferencia" element={<Transferencia />} />
             <Route path="/pagoservicios" element={<PagoServicios />} />
+            <Route path="/historial" element={<Historial />} />
           </Routes>
         </div>
       ) : (

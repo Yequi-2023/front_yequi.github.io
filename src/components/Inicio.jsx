@@ -109,10 +109,10 @@ export const Inicio = () => {
         </Menu>
       </nav>
       <div className="inicio">
-        <div className="contenedor-inicio-historial">
+        <Link to="/historial" className="contenedor-inicio-historial">
           <img src="/logo-historial.png" alt="logo-historial" />
           <h3>historial</h3>
-        </div>
+        </Link>
         <div className="contenedor-inicio-saldo">
           <div className="circulo-saldo">
             <h2>SALDO</h2>
