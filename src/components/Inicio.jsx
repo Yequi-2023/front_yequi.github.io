@@ -45,12 +45,12 @@ export const Inicio = () => {
                     </div>
                     <h4>PAGO DE SERVICIOS <br></br>PUBLICOS</h4>
                 </Link>
-                <div className='card'>
+                <Link to="/pago_obligaciones" className='card'>
                     <div className='card-img'>
                         <img src="/logo-creditos.png" alt="logo-creditos" />
                     </div>
                     <h4>TARJETA DE CREDITO <br></br>Y CREDITOS</h4>
-                </div>
+                </Link>
             </div>
         </div>
     </div>

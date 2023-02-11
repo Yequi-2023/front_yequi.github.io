@@ -52,7 +52,7 @@ function TarjetasDeCredito() {
             <div></div>
             <img
               className="img-cards"
-              src="/public/logos-avance-tarjeta-credito-min.png"
+              src="/logos-avance-tarjeta-credito-min.png"
               alt="logo-tarjeta-credito"
             />
 
