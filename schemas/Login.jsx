@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import '../src/styles/Login.css'
 // import Inicio from '../src/components/Inicio';
-// import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 
@@ -97,7 +97,7 @@ const Login = ({ getLogin }) => {
                             </Paper>
                         </Grid>
                     </Grid>
-                {/* <Link to="/crear_usuario">Crear usuario</Link> */}
+                <Link to="/crear_usuario">Crear usuario</Link>
                 </Container>
             </div>
         </div>

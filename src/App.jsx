@@ -40,7 +40,7 @@ const App = () => {
           window.location.reload(true);
         } else {
           setLogin(true);
-          navigate('/inicio' );
+          navigate('/inicio');
           localStorage.setItem('userLogin', true);
           localStorage.setItem('usuario', credenciales.usuario);
         }
@@ -73,11 +73,15 @@ const App = () => {
             <Route path="/pagoserviciospublicos" element={<PagoServicios2 />} />
             <Route path="/transferencia" element={<Transferencia />} />
             <Route path="/pagoservicios" element={<PagoServicios />} />
-            <Route path="/crear_usuario" element={<FormNuevaCuenta />} />
           </Routes>
         </div>
       ) : (
-        <Login getLogin={getLogin} />
+        <>
+          <Routes>
+            <Route path="/" element={<Login getLogin={getLogin}/>} />
+            <Route path="/crear_usuario" element={<FormNuevaCuenta />} />
+          </Routes>
+        </>
       )}
     </>
   );
