@@ -5,14 +5,35 @@ import { Link } from 'react-router-dom'
 export const Inicio = () => {
 
     const [usuario, setUsuario] = useState("")
-
+    let valor = window.location.href;
+    let cambio = valor.split('?')
+    let cambio2 = cambio[1]
+    const [inputValida, setInputValida] = useState([""]);
+    const fetchData = async () => {
+        try {
+            const datos = await fetch('http://127.0.0.1:8000/mi_api/mostrar_datos', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 'usuario': cambio2})
+            });
+            if (datos.ok) {
+                const data = await datos.json()
+                setInputValida(data)
+            }
+        } catch (error) {
+            console.log("El error es", error);
+        }
+    }
+    useEffect(() => {
+        fetchData()
+      }, [])
   return (
     <div className='contenedor-inicio'>
         <nav className='navbar-inicio'>
             <div className='logo'></div>
             <div className='logo-usuario'>
                 <img src="/logo-usuario.png" alt="" />
-                <h2 className='nombre-usuario'>Juan torres{/*aqui va el nombre de usuario*/}</h2>
+                <h2 className='nombre-usuario'>{inputValida[0][1]}</h2>
             </div>
         </nav>
         <div className='inicio'>
@@ -23,7 +44,7 @@ export const Inicio = () => {
             <div className='contenedor-inicio-saldo'>
                 <div className='circulo-saldo'>
                     <h2>SALDO</h2>
-                    <h3>2.000.000.00{/*aqui va el saldo*/}</h3>
+                    <h3>{inputValida[0][0]}</h3>
                 </div>
             </div>
             <div className='contenedor-inicio-transacciones'>

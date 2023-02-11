@@ -10,6 +10,7 @@ import TarjetasDeCredito from "./components/TarjetasDeCredito";
 import Transferencia from "./components/Transferencia";
 import PagoServicios from "./components/PagoServicios";
 import PagoObligaciones from "./components/PagoObligaciones";
+import FormNuevaCuenta from './components/FormNuevaCuenta'
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/transferencia" element={<Transferencia />} />
           <Route exact path="/pagoservicios" element={<PagoServicios />} />
           <Route exact path="/pago_obligaciones" element={<PagoObligaciones />} />
+          <Route exact path="/crear_usuario" element={<FormNuevaCuenta/>} />
         </Routes>
       </Router>
     </div>
