@@ -47,3 +47,28 @@
 .card_img_servicio img {
     width: 90px;
 }
+
+@media screen and (max-width:700px) {
+    .card_img_servicio  {
+        width: 100px;
+        height: 100px;
+    }
+    .card_img_servicio img {
+        width: 60px;
+    }
+}
+@media screen and (max-width:550px) {
+    .pago_servicios {
+        margin-top: 10px;
+    }
+    .pago_servicios h2 {
+        font-size: 20px;
+    }
+    .contenedor_servicios {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    .card_servicio{
+        width: 40%;
+    }
+}

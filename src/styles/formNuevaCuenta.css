@@ -8,12 +8,12 @@
 }
 
 .CNuevaCuenta {
-    width: 98%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  width: 88%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 .CNuevaCuenta h2 {
@@ -83,18 +83,19 @@
 }
 
 .contenedorFormulario {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  background: #dfdfdf;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .contenedorFormulario div {
-    display: flex;
-    width: 40%;
-    text-align: start;
-    flex-direction: column;
-    margin: 20px 0;
+  display: flex;
+  width: 40%;
+  text-align: start;
+  flex-direction: column;
+  margin: 20px 0;
 }
 
 .contenedorFormulario input,
@@ -107,7 +108,9 @@
 }
 
 input {
-    border: 1px solid #d6d6d6;
+  border-style: solid;
+  background: white;
+  border: 1px solid #d6d6d6;
 }
 
 .formulario button {
@@ -120,6 +123,25 @@ input {
     border: none;
     border-radius: 15px;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .CNuevaCuenta h2 {
+    font-size: 40px;
+  }
+  .CNuevaCuenta p {
+    width: 90%;
+    font-size: 18px;
+  }
+  .CFormulario {
+    width: 80%;
+  }
+  .contenedorFormulario div {
+    width: 80%;
+  }
+  .formulario button {
+    width: 60% !important;
+  }
 }
 
 .CFormulario2 button {

@@ -28,7 +28,6 @@
 .logo-usuario {
     display: flex;
     flex-direction: row;
-    width: 20%;
     justify-content: flex-end;
     align-items: center;
     margin-right: 20px;
@@ -105,4 +104,95 @@
     justify-content: center;
     text-align: center;
     cursor: pointer;
+}
+
+@media screen and (min-width:1350px) {
+    .inicio {
+        margin-top: 50px;
+    }
+
+    .contenedor-inicio-transacciones {
+        margin-top: 200px;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .contenedor-inicio-transacciones {
+        justify-content: center;
+    }
+
+    .card {
+        width: 30%;
+        margin: 0 20px 40px 20px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .contenedor-inicio-transacciones {
+        justify-content: center;
+    }
+
+    .card {
+        width: 40%;
+    }
+    .contenedor-inicio-historial {
+        top: 10px;
+        left: 20px;
+    }
+    .circulo-saldo {
+        width: 250px;
+        border-radius: 50%;
+    }
+}
+@media screen and (max-width:450px) {
+    
+    .nombre-usuario {
+        font-size: 17px;
+    }
+    .contenedor-inicio-transacciones {
+        margin-top: 40px;
+    }
+
+    .card {
+        width: 35%;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+    .card h4{
+        margin-top: 0;
+        font-size: 12px;
+    }
+    .card-img img {
+        width: 50px;
+    }
+    .contenedor-inicio-historial {
+        top: 10px;
+        left: 20px;
+    }
+    .contenedor-inicio-historial img {
+        width: 30px;
+        height: 30px;
+    }
+    .contenedor-inicio-historial h3 {
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    .circulo-saldo {
+        width: 250px;
+        border-radius: 50%;
+    }
+    .circulo-saldo h2{
+        font-size: 20px;
+    }
+    .circulo-saldo h3{
+        font-size: 25px;
+    }
+}
+@media screen and (min-height:800px) and (max-width:450px) {
+    .card {
+        width: 35%;
+        height: 200px;
+        margin-bottom: 15px;
+    }
 }

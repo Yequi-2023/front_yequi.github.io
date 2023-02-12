@@ -121,12 +121,12 @@ function FormNuevaCuentaCorresponsal() {
                     </div>
                     <div className="CFormulario2">
                         <h2>Cuenta creada exitosamente</h2>
-                        <Link to="/" className='card'> Aceptar
+                        <Link to="/" className='cardw'> Aceptar
                         </Link>
                     </div>
                     <div className="CFormulario3">
                         <h2>La cuenta para el número celular indicado ya existe</h2>
-                        <Link to="/" className='card'> Aceptar
+                        <Link to="/" className='cardw'> Aceptar
                         </Link>
                     </div>
                 </div>

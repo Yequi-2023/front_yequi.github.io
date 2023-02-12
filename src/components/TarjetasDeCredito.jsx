@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navbar } from "../layouts/Navbar";
+import { Link } from "react-router-dom";
 import "../styles/TarjetasDeCredito.css";
 
 function TarjetasDeCredito() {
@@ -52,7 +53,7 @@ function TarjetasDeCredito() {
             <div></div>
             <img
               className="img-cards"
-              src="/logos-avance-tarjeta-credito-min.png"
+              src="/public/logos-avance-tarjeta-credito-min.png"
               alt="logo-tarjeta-credito"
             />
 
