@@ -104,6 +104,9 @@ export const Inicio = () => {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
+          <MenuItem className='nombre-avatar'>
+                        {inputValida.nombre}
+                    </MenuItem>
           <MenuItem onClick={logout}>
             <ListItemIcon>
               <Logout fontSize="small" />
