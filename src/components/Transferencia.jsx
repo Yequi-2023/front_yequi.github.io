@@ -98,7 +98,9 @@ const Transferencia = () => {
               required
             />
           </div>
-          <button onClick={fetchData}>Transferir</button>
+          <button className="transferir" onClick={fetchData}>
+            Transferir
+          </button>
         </form>
       </div>
     </div>
