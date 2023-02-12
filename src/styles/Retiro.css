@@ -15,7 +15,8 @@
     justify-content: flex-start;
     text-align: center;
     align-items: center;
-    height: 40vh;
+    height: auto;
+    padding-bottom: 30px;
     border-radius: 15px;
 }
 
@@ -45,4 +46,13 @@
     padding: 7px 20px;
     border-radius: 15px;
     cursor: pointer;
+}
+
+@media screen and (min-width:1350px) {
+    .retiro {
+        margin-top: 80px;
+    }
+    .formulario-retiro {
+        margin-top: 30px;
+    }
 }
