@@ -24,28 +24,38 @@ const Transferencia = () => {
 
   const fetchData = async () => {
     try {
-      const datos = await fetch("http://127.0.0.1:8000/mi_api/transferencia", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          monto: monto,
-          descripcion: descripcion == "" ? "Transferencia" : descripcion,
-          usuario_origen: localStorage.getItem("usuario"),
-          usuario_destino: cuentaDestino,
-        }),
-      });
-      if (datos.ok) {
-        const data = await datos.json();
-        if (data.msg == "Transaccion exitosa") {
-          toast.success("Transferencia Realizada!", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-          window.location.reload();
-        }
-        if (data == "Cuenta destino no existe") {
-          toast.error("Cuenta destino no existe!", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
+      if (monto <= 0) {
+        toast.error("El monto debe ser mayor a 0", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        setMonto("");
+      } else {
+        const datos = await fetch(
+          "http://127.0.0.1:8000/mi_api/transferencia",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              monto: monto,
+              descripcion: descripcion == "" ? "Transferencia" : descripcion,
+              usuario_origen: localStorage.getItem("usuario"),
+              usuario_destino: cuentaDestino,
+            }),
+          }
+        );
+        if (datos.ok) {
+          const data = await datos.json();
+          if (data.msg == "Transaccion exitosa") {
+            toast.success("Transferencia Realizada!", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+            window.location.reload();
+          }
+          if (data == "Cuenta destino no existe") {
+            toast.error("Cuenta destino no existe!", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+          }
         }
       }
     } catch (error) {

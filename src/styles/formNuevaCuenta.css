@@ -1,9 +1,10 @@
 .nuevaCuenta {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
 }
 
 .CNuevaCuenta {
@@ -16,33 +17,69 @@
 }
 
 .CNuevaCuenta h2 {
-  padding-top: 50px;
-  font-size: 50px;
+   
+    padding-top: 40px;
+    font-size: 40px;
+    
 }
 
 .CNuevaCuenta p {
-  width: 80%;
-  font-size: 20px;
+    width: 80%;
+    font-size: 20px;
 }
 
 .CFormulario {
-  background: #dfdfdf;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid #bcbcbc;
-  border-radius: 15px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+    background: #dfdfdf;
+}
+.CFormulario2 {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+    background: #dfdfdf;
+    display: none;
+}
+.CFormulario3 {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+    background: #dfdfdf;
+    display: none;
 }
 
 .CFormulario h2 {
-  margin: 0;
-  font-size: 30px;
+   
+    margin: 0;
+    font-size: 30px;
+}
+.CFormulario2 h2 {
+   
+    margin: 0;
+    font-size: 30px;
+}
+.CFormulario3 h2 {
+   
+    margin: 0;
+    font-size: 30px;
 }
 
 .formulario {
-  width: 100%;
+    background: #dfdfdf;
+    width: 100%;
 }
 
 .contenedorFormulario {
@@ -63,11 +100,11 @@
 
 .contenedorFormulario input,
 .contenedorFormulario select {
-  background: white;
-  color: #000;
-  margin-top: 10px;
-  padding: 12px 15px;
-  border-radius: 5px;
+    margin-top: 10px;
+    padding: 12px 15px;
+    border: 1px solid #bcbcbc;
+  
+    border-radius: 15px;
 }
 
 input {
@@ -77,12 +114,15 @@ input {
 }
 
 .formulario button {
-  margin: auto !important;
-  border-style: hidden;
-  padding: 10px;
-  width: 30% !important;
-  background-color: #bc87ff !important;
-  color: #fff;
+    display: flex;
+    margin: 0 30px 50px auto;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #bc87ff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -102,4 +142,41 @@ input {
   .formulario button {
     width: 60% !important;
   }
+}
+
+.CFormulario2 button {
+    display: flex;
+    margin: 0 30px 50px auto;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #bc87ff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+
+.CFormulario .card {
+   
+   width: 80px;
+    height: 25px;
+  
+    border-radius: 20px;
+
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    
+ 
+    margin: 30px auto 50px auto;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #bc87ff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
 }
