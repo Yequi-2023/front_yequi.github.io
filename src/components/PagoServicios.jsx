@@ -19,37 +19,37 @@ const PagoServicios = () => {
                 <div className='contenedor_servicios'>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='agua' onClick={guardarEven} src="/logo-agua.png" alt="logo-retiro" />
+                            <img name='1' onClick={guardarEven} src="/logo-agua.png" alt="logo-retiro" />
                         </Link>
                         <h4>AGUA</h4>
                     </div>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='energia' onClick={guardarEven} src="/logo-energia.png" alt="logo-retiro" />
+                            <img name='2' onClick={guardarEven} src="/logo-energia.png" alt="logo-retiro" />
                         </Link>
                         <h4>ENERGIA</h4>
                     </div>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='gas' onClick={guardarEven} src="/logo-gas.png" alt="logo-retiro" />
+                            <img name='3' onClick={guardarEven} src="/logo-gas.png" alt="logo-retiro" />
                         </Link>
                         <h4>GAS</h4>
                     </div>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='claro' onClick={guardarEven} src="/logo-claro.png" alt="logo-retiro" />
+                            <img name='4' onClick={guardarEven} src="/logo-claro.png" alt="logo-retiro" />
                         </Link>
                         <h4>CLARO</h4>
                     </div>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='tigo' onClick={guardarEven} src="/logo-tigo.png" alt="logo-retiro" />
+                            <img name='5' onClick={guardarEven} src="/logo-tigo.png" alt="logo-retiro" />
                         </Link>
                         <h4>TIGO</h4>
                     </div>
                     <div className='card_servicio' >
                         <Link to="/pagoserviciospublicos" className='card_img_servicio'>
-                            <img name='etb' onClick={guardarEven} src="/logo-etb.png" alt="logo-retiro" />
+                            <img name='6' onClick={guardarEven} src="/logo-etb.png" alt="logo-retiro" />
                         </Link>
                         <h4>ETB</h4>
                     </div>

@@ -1,9 +1,9 @@
 .retiro {
-    margin-top: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .formulario-retiro {
@@ -21,24 +21,28 @@
 }
 
 .formulario-retiro label {
-    margin-top: 50px;
-    font-size: 20px;
+  margin-top: 50px;
+  font-size: 20px;
 }
+
 .formulario-retiro input {
-    margin-top: 20px;
-    font-size: 20px;
-    color: black;
-    background: white;
-    border:none;
-    padding: 3px ;
-    border-radius: 15px;
-    text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: black;
+  background: white;
+  border: none;
+  padding: 3px;
+  border-radius: 15px;
+  text-align: center;
 }
-.formulario-retiro input:focus-visible{
-    border: none;
-    outline: none;    
+
+.formulario-retiro input:focus-visible {
+  border: none;
+  outline: none;
 }
+
 .formulario-retiro button {
+<<<<<<< HEAD
     margin-top: 40px;
     font-size: 20px;
     background-color:  #BC87FF;
@@ -56,3 +60,49 @@
         margin-top: 30px;
     }
 }
+=======
+  margin-top: 40px;
+  font-size: 20px;
+  background-color: #bc87ff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .formulario-retiro {
+    width: 80%;
+  }
+
+  .formulario-retiro label {
+    font-size: 18px;
+  }
+
+  .formulario-retiro input {
+    font-size: 18px;
+  }
+
+  .formulario-retiro button {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .formulario-retiro {
+    width: 90%;
+  }
+
+  .formulario-retiro label {
+    font-size: 16px;
+  }
+
+  .formulario-retiro input {
+    font-size: 16px;
+  }
+
+  .formulario-retiro button {
+    font-size: 16px;
+  }
+}
+>>>>>>> 7119b06d58f57c6c62ef4beb4c0ca07c7767d09e

@@ -5,35 +5,68 @@ import "../styles/PagoServicios2.css";
 
 const PagoServicios2 = () => {
   const [referenceNumber, setReferenceNumber] = useState("");
-  const [paymentAmount, setPaymentAmount] = useState(0);
+  const [monto, setMonto] = useState(0);
+  const [descripcion, setDescripcion] = useState("");
 
+  const leerInputRefe = (e) => {
+    setReferenceNumber(e.target.value);
+  }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Enviar los datos a un servidor, procesar el pago, etc.
-  };
-  
+  const leerInputMonto = (e) => {
+    setMonto(e.target.value);
+  }
+
+  const leerInputDescrip = (e) => {
+    setDescripcion(e.target.value);
+  }
+
+  const fetchData = async () => {
+    try {
+      const datos = await fetch('http://127.0.0.1:8000/mi_api/recaudos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          monto: monto,
+          descripcion:descripcion,
+          referencia: referenceNumber,
+          usuario: localStorage.getItem('usuario'),
+          tipo_recaudo: localStorage.getItem('tipoServicio')
+        }),
+      });
+      if (datos.ok) {
+        const data = await datos.json();
+      }
+    } catch (error) {
+      console.log('El error es', error);
+    }
+  };  
   return (
     <div className="contenedor-servicios">
       <Navbar />
       <div className="servicios-publicos">
         <h2>PAGO DE SERVICIOS PUBLICOS</h2>
-        <form className="formulario-servicios-publicos" onSubmit={handleSubmit}>
+        <form className="formulario-servicios-publicos">
           <label htmlFor="reference">Número de Referencia:</label>
           <input
-            type="text"
+            type="number"
+            required
             id="reference"
-            value={referenceNumber}
-            onChange={(event) => setReferenceNumber(event.target.value)}
+            onChange={leerInputRefe}
+          />
+          <label htmlFor="descripcion">Descripcion:</label>
+          <input
+            type="text"
+            id="descripcion"
+            onChange={leerInputDescrip}
           />
           <label htmlFor="amount">Monto a Pagar:</label>
           <input
             type="number"
+            required
             id="amount"
-            value={paymentAmount}
-            onChange={(event) => setPaymentAmount(event.target.value)}
+            onChange={leerInputMonto}
           />
-          <button type="submit">Pagar Servicio</button>
+          <button type="submit" onClick={fetchData}>Pagar Servicio</button>
         </form>
       </div>
     </div >
