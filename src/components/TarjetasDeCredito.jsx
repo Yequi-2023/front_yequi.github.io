@@ -22,7 +22,8 @@ function TarjetasDeCredito() {
             <div>
               <label className="usuario-titular" htmlFor="holderName">
                 Nombre del Titular:
-              </label>
+              </label>{" "}
+              <br />
               <input
                 type="text"
                 id="holderName"
@@ -33,7 +34,8 @@ function TarjetasDeCredito() {
             <div>
               <label className="wrapper" htmlFor="securityCode">
                 Código de Seguridad:
-              </label>
+              </label>{" "}
+              <br />
               <input
                 type="text"
                 id="securityCode"
@@ -42,7 +44,7 @@ function TarjetasDeCredito() {
               />
             </div>
             <div>
-              <label htmlFor="cardNumber">Número de Tarjeta:</label>
+              <label htmlFor="cardNumber">Número de Tarjeta:</label> <br />
               <input
                 type="text"
                 id="cardNumber"
@@ -50,13 +52,14 @@ function TarjetasDeCredito() {
                 onChange={(event) => setCardNumber(event.target.value)}
               />
             </div>
+            <br />
             <div></div>
             <img
               className="img-cards"
               src="/public/logos-avance-tarjeta-credito-min.png"
               alt="logo-tarjeta-credito"
-            />
-
+            />{" "}
+            <br />
             <button type="submit" className="consultar">
               Consultar
             </button>
