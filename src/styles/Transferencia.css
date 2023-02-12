@@ -1,67 +1,71 @@
 .transferencia {
-    margin-top: 70px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .formulario_transferencia {
-    width: 60%;
-    display: flex;
-    margin: auto;
-    background: #dfdfdf;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    align-items: center;
-    height: auto;
-    border-radius: 15px;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  background: #dfdfdf;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  align-items: center;
+  height: auto;
+  border-radius: 15px;
+  padding: 0 0 10px 0;
 }
 
 .formulario_transferencia div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .formulario_transferencia label {
-    /* margin-top: 50px; */
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.formulario_transferencia input,.formulario_transferencia select {
-    /* margin-top: 20px; */
-    font-size: 17px;
-    color: black;
-    background: white;
-    border: none;
-    padding: 3px;
-    border-radius: 15px;
-    text-align: center;
+.formulario_transferencia input,
+.formulario_transferencia select {
+  /* margin-top: 20px; */
+  display: flex;
+  font-size: 15px;
+  color: black;
+  background: white;
+  border: none;
+  padding: 3px;
+  border-radius: 15px;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .formulario_transferencia input:focus-visible {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .campo_identificacion_transferencia {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row !important;
 }
-.campo_identificacion_transferencia div{
-    width: 40%;
-    margin: auto 20px;
+.campo_identificacion_transferencia div {
+  width: 40%;
+  margin: auto 20px;
 }
 
 .formulario_transferencia button {
-    margin-top: 40px;
-    font-size: 20px;
-    background-color: #BC87FF;
-    border: none;
-    padding: 7px 50px;
-    border-radius: 15px;
-    cursor: pointer;
+  margin-top: 40px;
+  font-size: 20px;
+  background-color: #bc87ff;
+  border: none;
+  padding: 7px 50px;
+  border-radius: 15px;
+  cursor: pointer;
 }
