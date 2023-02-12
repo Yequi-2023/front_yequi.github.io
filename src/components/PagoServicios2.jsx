@@ -24,24 +24,37 @@ const PagoServicios2 = () => {
 
   const fetchData = async () => {
     try {
-      const datos = await fetch('http://127.0.0.1:8000/mi_api/recaudos', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          monto: monto,
-          descripcion: (descripcion==''?'Pago Servicio Publico': descripcion),
-          referencia: referenceNumber,
-          usuario: localStorage.getItem('usuario'),
-          tipo_recaudo: localStorage.getItem('tipoServicio')
-        }),
-      });
-      if (datos.ok) {
-        const data = await datos.json();
-        if (data.msg == 'Pago exitoso') {
-          toast.success('Pago Realizado!', {
+      if (referenceNumber <= 0) {
+        toast.error('El Número Referencia no puede estar vacio', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+        setMonto('')
+      } else {
+        if ( monto <= 0) {
+          toast.error('El monto debe ser mayor a 0', {
             position: toast.POSITION.TOP_RIGHT
           });
-          window.location.reload();
+        } else {
+          const datos = await fetch('http://127.0.0.1:8000/mi_api/recaudos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              monto: monto,
+              descripcion: (descripcion == '' ? 'Pago Servicio Publico' : descripcion),
+              referencia: referenceNumber,
+              usuario: localStorage.getItem('usuario'),
+              tipo_recaudo: localStorage.getItem('tipoServicio')
+            }),
+          });
+          if (datos.ok) {
+            const data = await datos.json();
+            if (data.msg == 'Pago exitoso') {
+              toast.success('Pago Realizado!', {
+                position: toast.POSITION.TOP_RIGHT
+              });
+              window.location.reload();
+            }
+          }
         }
       }
     } catch (error) {
