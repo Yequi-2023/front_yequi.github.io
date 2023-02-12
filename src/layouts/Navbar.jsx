@@ -22,11 +22,14 @@ export const Navbar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    
     const logout = () => {
         localStorage.removeItem('userLogin');
         localStorage.removeItem('usuario');
+        localStorage.removeItem('tipoServicio');
         window.location.reload(true);
     };
+
     const fetchData = async () => {
         try {
             const datos = await fetch('http://127.0.0.1:8000/mi_api/mostrar_datos', {

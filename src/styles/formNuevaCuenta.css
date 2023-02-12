@@ -47,7 +47,6 @@
 
 .contenedorFormulario {
   background: #dfdfdf;
-
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -72,13 +71,35 @@
 }
 
 input {
+  border-style: solid;
   background: white;
   border: 1px solid #d6d6d6;
 }
 
 .formulario button {
   margin: auto !important;
+  border-style: hidden;
+  padding: 10px;
   width: 30% !important;
   background-color: #bc87ff !important;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .CNuevaCuenta h2 {
+    font-size: 40px;
+  }
+  .CNuevaCuenta p {
+    width: 90%;
+    font-size: 18px;
+  }
+  .CFormulario {
+    width: 80%;
+  }
+  .contenedorFormulario div {
+    width: 80%;
+  }
+  .formulario button {
+    width: 60% !important;
+  }
 }
