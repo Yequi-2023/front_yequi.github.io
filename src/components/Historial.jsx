@@ -19,12 +19,6 @@ export const Historial = () => {
         } catch (error) {
             console.log('El error es', error);
         }
-        // let data = [ /*Esto podria retornar la consulta */
-        //     [1, 555556, 3000000.00, 125221, "pago Prueba"],
-        //     [1, 555557, 8000000.00, 213221, "pago Prueba2"],
-        //     [1, 555556, 3000000.00, 125221, "pago Prueba3"]
-        // ]
-        // setHistorial(data)
     }
     useEffect(() => {
         fetchData()
@@ -50,8 +44,8 @@ export const Historial = () => {
                             return(
                                 <tr key={index}>
                                     <td><p>{dato[0]}</p></td>
-                                    <td><p>{dato[3]}</p></td>
                                     <td><p>{dato[2]}</p></td>
+                                    <td><p>{dato[3]}</p></td>
                                     <td><p>{dato[1]}</p></td>
                                 </tr>
                             )

@@ -7,16 +7,17 @@
 }
 
 .formulario-retiro {
-  width: 60%;
-  display: flex;
-  margin: auto;
-  background: #dfdfdf;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  align-items: center;
-  height: 40vh;
-  border-radius: 15px;
+    width: 60%;
+    display: flex;
+    margin: auto;
+    background: #dfdfdf;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    padding-bottom: 30px;
+    border-radius: 15px;
 }
 
 .formulario-retiro label {
@@ -41,6 +42,25 @@
 }
 
 .formulario-retiro button {
+<<<<<<< HEAD
+    margin-top: 40px;
+    font-size: 20px;
+    background-color:  #BC87FF;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1350px) {
+    .retiro {
+        margin-top: 80px;
+    }
+    .formulario-retiro {
+        margin-top: 30px;
+    }
+}
+=======
   margin-top: 40px;
   font-size: 20px;
   background-color: #bc87ff;
@@ -85,3 +105,4 @@
     font-size: 16px;
   }
 }
+>>>>>>> 7119b06d58f57c6c62ef4beb4c0ca07c7767d09e
