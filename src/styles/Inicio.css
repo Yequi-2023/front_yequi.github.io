@@ -145,7 +145,7 @@
         border-radius: 50%;
     }
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:450px) {
     
     .nombre-usuario {
         font-size: 17px;
@@ -156,8 +156,11 @@
 
     .card {
         width: 35%;
+        height: 120px;
+        margin-bottom: 15px;
     }
     .card h4{
+        margin-top: 0;
         font-size: 12px;
     }
     .card-img img {
@@ -184,5 +187,12 @@
     }
     .circulo-saldo h3{
         font-size: 25px;
+    }
+}
+@media screen and (min-height:800px) and (max-width:450px) {
+    .card {
+        width: 35%;
+        height: 200px;
+        margin-bottom: 15px;
     }
 }
