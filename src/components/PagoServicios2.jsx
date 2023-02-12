@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { Navbar } from "../layouts/Navbar";
 import "../styles/PagoServicios2.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PagoServicios2 = () => {
   const [referenceNumber, setReferenceNumber] = useState(0);
@@ -27,7 +29,7 @@ const PagoServicios2 = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           monto: monto,
-          descripcion:descripcion,
+          descripcion: descripcion,
           referencia: referenceNumber,
           usuario: localStorage.getItem('usuario'),
           tipo_recaudo: localStorage.getItem('tipoServicio')
@@ -35,18 +37,32 @@ const PagoServicios2 = () => {
       });
       if (datos.ok) {
         const data = await datos.json();
-        console.log("aqui")
+        if (data.msg == 'Pago exitoso') {
+          toast.success('Pago Realizado!', {
+            position: toast.POSITION.TOP_RIGHT
+          });
+          window.location.reload();
+        }
       }
     } catch (error) {
-      console.log('El error es', error);
+      toast.error('Saldo insuficiente !', {
+        position: toast.POSITION.TOP_CENTER
+      });
+      setMonto('')
     }
-  };  
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Enviar los datos a un servidor, realizar la consulta, etc.
+  };
+
   return (
     <div className="contenedor-servicios">
       <Navbar />
+      <ToastContainer />
       <div className="servicios-publicos">
         <h2>PAGO DE SERVICIOS PUBLICOS</h2>
-        <form className="formulario-servicios-publicos">
+        <form className="formulario-servicios-publicos" onSubmit={handleSubmit}>
           <label htmlFor="reference">Número de Referencia:</label>
           <input
             type="number"
@@ -65,9 +81,10 @@ const PagoServicios2 = () => {
             type="number"
             required
             id="amount"
+            value={monto}
             onChange={leerInputMonto}
           />
-          <button type="submit" onClick={fetchData}>Pagar Servicio</button>
+          <button onClick={fetchData}>Pagar Servicio</button>
         </form>
       </div>
     </div >
