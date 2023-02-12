@@ -4,7 +4,7 @@ import { Navbar } from "../layouts/Navbar";
 import "../styles/PagoServicios2.css";
 
 const PagoServicios2 = () => {
-  const [referenceNumber, setReferenceNumber] = useState("");
+  const [referenceNumber, setReferenceNumber] = useState(0);
   const [monto, setMonto] = useState(0);
   const [descripcion, setDescripcion] = useState("");
 
@@ -35,6 +35,7 @@ const PagoServicios2 = () => {
       });
       if (datos.ok) {
         const data = await datos.json();
+        console.log("aqui")
       }
     } catch (error) {
       console.log('El error es', error);
