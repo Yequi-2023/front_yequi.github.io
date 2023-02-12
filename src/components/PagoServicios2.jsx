@@ -53,7 +53,6 @@ const PagoServicios2 = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Enviar los datos a un servidor, realizar la consulta, etc.
   };
 
   return (
