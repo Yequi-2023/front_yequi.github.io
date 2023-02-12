@@ -16,7 +16,6 @@ import Transferencia from './components/Transferencia';
 import PagoServicios from './components/PagoServicios';
 import FormNuevaCuenta from './components/FormNuevaCuenta';
 import { Historial } from './components/Historial';
-import FormNuevaCuentaCorresponsal from './components/FormNuevaCuentaCorresponsal';
 
 const App = () => {
   const [login, setLogin] = useState();
@@ -83,7 +82,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Login getLogin={getLogin}/>} />
             <Route path="/crear_usuario" element={<FormNuevaCuenta />} />
-            <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal/>} />
           </Routes>
         </>
       )}
