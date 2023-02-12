@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Inicio } from './components/Inicio';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from 'react-router-dom';
+import { Routes, Route, useNavigate, } from 'react-router-dom';
 import Login from '../schemas/Login';
 import md5 from 'md5'
 import './App.css';
@@ -80,7 +75,7 @@ const App = () => {
       ) : (
         <>
           <Routes>
-            <Route path="/" element={<Login getLogin={getLogin}/>} />
+            <Route path="/" element={<Login getLogin={getLogin} />} />
             <Route path="/crear_usuario" element={<FormNuevaCuenta />} />
           </Routes>
         </>

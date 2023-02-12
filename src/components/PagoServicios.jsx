@@ -2,7 +2,6 @@ import React from 'react'
 import { Navbar } from '../layouts/Navbar'
 import { Link } from 'react-router-dom'
 import '../styles/pagoServicios.css'
-import { useState, useEffect } from "react";
 
 const PagoServicios = () => {
 

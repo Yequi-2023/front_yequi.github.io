@@ -1,53 +1,112 @@
 import React, { useState } from "react";
 import { Navbar } from "../layouts/Navbar";
-import { Link } from "react-router-dom";
 import "../styles/TarjetasDeCredito.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function TarjetasDeCredito() {
-  const [holderName, setHolderName] = useState("");
-  const [securityCode, setSecurityCode] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [monto, setMonto] = useState(0);
+  const [referencia, setReferencia] = useState(0);
 
+  const leerInputDescripcion = (e) => {
+    setDescripcion(e.target.value);
+  }
+
+  const leerInputMonto = (e) => {
+    setMonto(e.target.value);
+  }
+
+  const leerInputReferencia = (e) => {
+    setReferencia(e.target.value);
+  }
+
+  const fetchData = async () => {
+    try {
+      if (monto <= 0) {
+        toast.error('El monto debe ser mayor a 0', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+        setMonto('')
+      } else {
+        if (referencia <= 0) {
+          toast.error('El Número de Tarjeta o Referencia de credito no puede estar vacio', {
+            position: toast.POSITION.TOP_RIGHT
+          });
+        } else {
+          const datos = await fetch('http://127.0.0.1:8000/mi_api/pagos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              monto: monto,
+              descripcion: (descripcion == '' ? 'Pago Obligaciones' : descripcion),
+              referencia: referencia,
+              usuario: localStorage.getItem('usuario')
+            }),
+          });
+          const data = await datos.json();
+          if (datos.ok) {
+            if (data.msg == 'Pago exitoso') {
+              toast.success('Transferencia Realizada!', {
+                position: toast.POSITION.TOP_RIGHT
+              });
+              window.location.reload();
+            }
+            else {
+              toast.error('Saldo Insuficiente!', {
+                position: toast.POSITION.TOP_RIGHT
+              });
+              setMonto('')
+            }
+          }
+        }
+      }
+    } catch (error) {
+      toast.error('Algún dato esta incorrecto. !', {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Enviar los datos a un servidor, realizar la consulta, etc.
   };
 
   return (
     <div className="contenedor-info">
       <Navbar />
+      <ToastContainer />
       <div className="usuario-tarjeta-credito">
         <div>
           <form className="formulario-tarjeta-credito" onSubmit={handleSubmit}>
             <div>
               <label className="usuario-titular" htmlFor="holderName">
-                Nombre del Titular:
+                Monto:
               </label>
               <input
                 type="text"
                 id="holderName"
-                value={holderName}
-                onChange={(event) => setHolderName(event.target.value)}
+                value={monto}
+                onChange={leerInputMonto}
+                required
               />
             </div>
             <div>
               <label className="wrapper" htmlFor="securityCode">
-                Código de Seguridad:
+                Descripción:
               </label>
               <input
-                type="text"
+                type="number"
                 id="securityCode"
-                value={securityCode}
-                onChange={(event) => setSecurityCode(event.target.value)}
+                onChange={leerInputDescripcion}
               />
             </div>
             <div>
-              <label htmlFor="cardNumber">Número de Tarjeta:</label>
+              <label htmlFor="cardNumber">Numero Tarjeta o Referencia Crédito:</label>
               <input
-                type="text"
+                type="number"
                 id="cardNumber"
-                value={cardNumber}
-                onChange={(event) => setCardNumber(event.target.value)}
+                onChange={leerInputReferencia}
+                required
               />
             </div>
             <div></div>
@@ -56,9 +115,8 @@ function TarjetasDeCredito() {
               src="/public/logos-avance-tarjeta-credito-min.png"
               alt="logo-tarjeta-credito"
             />
-
-            <button type="submit" className="consultar">
-              Consultar
+            <button onClick={fetchData} className="consultar">
+              Pagar
             </button>
           </form>
         </div>

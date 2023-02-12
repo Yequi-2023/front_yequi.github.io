@@ -28,5 +28,4 @@ const PagoObligaciones = () => {
     </div>
   )
 }
-
 export default PagoObligaciones

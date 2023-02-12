@@ -49,3 +49,21 @@
   border-radius: 15px;
   cursor: pointer;
 }
+
+
+@media screen and (max-width:550px) {
+  .servicios-publicos h2 {
+    font-size: 22px;
+  }
+  .formulario-servicios-publicos {
+    width: 70%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (min-width:551px) {
+  .formulario-servicios-publicos {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
