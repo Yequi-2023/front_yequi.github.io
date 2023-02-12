@@ -29,7 +29,7 @@ const PagoServicios2 = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           monto: monto,
-          descripcion: descripcion,
+          descripcion: (descripcion==''?'Pago Servicio Publico': descripcion),
           referencia: referenceNumber,
           usuario: localStorage.getItem('usuario'),
           tipo_recaudo: localStorage.getItem('tipoServicio')
