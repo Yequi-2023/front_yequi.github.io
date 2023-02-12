@@ -11,6 +11,8 @@ import Transferencia from "./components/Transferencia";
 import PagoServicios from "./components/PagoServicios";
 import FormNuevaCuenta from "./components/FormNuevaCuenta";
 import { Historial } from "./components/Historial";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [login, setLogin] = useState(true);
@@ -31,9 +33,10 @@ const App = () => {
       if (datos.ok) {
         const data = await datos.json();
         if (data == "error") {
-          alert("Credenciales incorrectas");
+          toast.error("Credenciales incorrectas", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
           setLogin(false);
-          window.location.reload(true);
         } else {
           setLogin(true);
           navigate("/inicio");
@@ -58,6 +61,7 @@ const App = () => {
 
   return (
     <>
+    <ToastContainer />
       {login ? (
         <div className="App">
           <Routes>
