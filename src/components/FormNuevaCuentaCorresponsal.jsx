@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-import '../styles/formNuevaCuenta.css'
+import '../styles/formNuevaCuentaCorresponsal.css'
 import { Link } from 'react-router-dom'
 
-function FormNuevaCuenta() {
+function FormNuevaCuentaCorresponsal() {
     const [form, setForm] = useState({})
     const [flag, setFlag] = useState(0)
 
@@ -74,7 +74,7 @@ function FormNuevaCuenta() {
             </div>
             <section className="nuevaCuenta" >
                 <div className="CNuevaCuenta">
-                    <h2>CREACIÓN USUARIO</h2>
+                    <h2>CREACIÓN CORRESPONSAL</h2>
                     <hr />
                     <div className="CFormulario">
                         <h2>Formulario de creación cuenta</h2>
@@ -85,7 +85,7 @@ function FormNuevaCuenta() {
                             let email = ev.target.correo.value
                             let celular = ev.target.celular.value
                             let contraseña = ev.target.contraseña.value
-                            let total = { nombre, email, celular, contraseña, 'rol': "usuario" }
+                            let total = { nombre, email, celular, contraseña, 'rol': "corresponsal" }
                             //[nombre, email, celular, contraseña]
                             setForm(total)
                             setFlag(1)
@@ -121,12 +121,12 @@ function FormNuevaCuenta() {
                     </div>
                     <div className="CFormulario2">
                         <h2>Cuenta creada exitosamente</h2>
-                        <Link to="/login" className='card'> Aceptar
+                        <Link to="/" className='card'> Aceptar
                         </Link>
                     </div>
                     <div className="CFormulario3">
                         <h2>La cuenta para el número celular indicado ya existe</h2>
-                        <Link to="/login" className='card'> Aceptar
+                        <Link to="/" className='card'> Aceptar
                         </Link>
                     </div>
                 </div>
@@ -135,4 +135,4 @@ function FormNuevaCuenta() {
     )
 }
 
-export default FormNuevaCuenta
+export default FormNuevaCuentaCorresponsal
