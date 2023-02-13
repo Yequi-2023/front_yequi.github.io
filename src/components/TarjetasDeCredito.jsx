@@ -75,11 +75,12 @@ function TarjetasDeCredito() {
   };
 
   return (
-    <div className="contenedor-info">
+    <div>
       <Navbar />
       <ToastContainer />
       <div className="usuario-tarjeta-credito">
         <div>
+          <h2>TARJETAS DE CRÉDITO Y CRÉDITO</h2>
           <form className="formulario-tarjeta-credito" onSubmit={handleSubmit}>
             <div>
               <label className="usuario-titular" htmlFor="holderName">
@@ -95,7 +96,7 @@ function TarjetasDeCredito() {
             </div>
             <div>
               <label className="wrapper" htmlFor="securityCode">
-                Descripción: <br />
+                Descripción:
               </label>
               <input
                 type="number"
@@ -105,23 +106,22 @@ function TarjetasDeCredito() {
             </div>
             <div>
               <label htmlFor="cardNumber">
-                Numero Tarjeta o Referencia Crédito: <br />
-              </label>
+                Numero Tarjeta o Referencia Crédito:
+              </label>{" "}
               <input
+                className="card-number"
                 type="number"
                 id="cardNumber"
                 onChange={leerInputReferencia}
                 required
               />
             </div>
-            <br />
             <div></div>
             <img
               className="img-cards"
               src="/logos-avance-tarjeta-credito-min.png"
               alt="logo-tarjeta-credito"
             />
-            <br />
             <button onClick={fetchData} className="consultar">
               Pagar
             </button>
