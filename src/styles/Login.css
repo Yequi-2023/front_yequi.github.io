@@ -1,0 +1,97 @@
+.contenedor-general-login{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.contenedor-general-login .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+.contenido-login {
+    width: 100%;
+    margin-top: 100px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.decoracion {
+    /* margin: auto; */
+    text-align: center;
+    margin-top: 100px;
+    width: 60%;
+    height: 50vh;
+    background: url('/equipo-logo.png') center;
+    background-size: cover;
+    /* height: 40vh; */
+}
+/* .decoracion img {
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    height: auto;
+} */
+.login {
+    width: 40% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.contenedor-imagen-logo-usuario img {
+    width: 150px;
+}
+.caja-login {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.contenedor-inputs {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.input-login {
+    /* margin-top: 20px !important; */
+    margin: auto !important;
+    max-width: 400px !important;
+    width: 300px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    
+}
+.input-login div {
+    /* margin: auto !important; */
+    max-width: 600px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 20px !important;
+    height: 40px !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+    /* background-color: #BC87FF !important;     */
+}
+.input-login input {
+    padding: 7.5px 14px !important;
+}
+
+.boton-iniciar-sesion {
+    margin: auto !important;
+    width: 60% !important;
+    background-color: #BC87FF !important;
+    color: #fff;
+}
+
+@media screen and (max-width:650px) {
+    .decoracion {
+        width: 100%;
+        display: none;
+    }
+    .login {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,140 @@
+.transferencia {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.formulario_transferencia {
+  width: 60%;
+  display: flex;
+  margin: auto;
+  background: #dfdfdf;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  height: auto;
+  border-radius: 15px;
+}
+.formulario_transferencia label {
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.formulario_transferencia input {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-size: 20px;
+  color: black;
+  background: white;
+  border: none;
+  padding: 3px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.formulario_transferencia {
+  flex-direction: column;
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+  background: #dfdfdf;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 0;
+}
+
+/* .formulario-tarjeta-credito input:focus-visible {
+  border: none;
+  outline: none;
+} */
+
+.formulario_transferencia button {
+  margin-top: 40px;
+  font-size: 20px;
+  background-color: #bc87ff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .formulario-tarjeta-credito {
+    width: 80%;
+  }
+
+  .formulario-retiro label {
+    font-size: 18px;
+  }
+
+  .formulario-tarjeta-credito input {
+    font-size: 18px;
+  }
+
+  .formulario-tarjeta-credito select {
+    font-size: 18px;
+  }
+
+  .formulario-tarjeta-credito button {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .formulario-tarjeta-credito {
+    width: 90%;
+  }
+
+  .formulario-tarjeta-credito label {
+    font-size: 16px;
+  }
+
+  .formulario-tarjeta-credito input {
+    font-size: 16px;
+  }
+
+  .formulario-tarjeta-credito button {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .formulario_transferencia {
+    width: 90%;
+  }
+
+  .formulario_transferencia label {
+    font-size: 16px;
+  }
+
+  .formulario_transferencia input {
+    font-size: 16px;
+  }
+
+  .formulario_transferencia button {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .formulario_transferencia {
+    width: 90%;
+  }
+
+  .formulario_transferencia label {
+    font-size: 16px;
+  }
+
+  .formulario_transferencia input {
+    font-size: 16px;
+  }
+
+  .formulario_transferencia button {
+    font-size: 16px;
+  }
+}
