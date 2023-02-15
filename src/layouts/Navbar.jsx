@@ -27,6 +27,8 @@ export const Navbar = () => {
         localStorage.removeItem('userLogin');
         localStorage.removeItem('usuario');
         localStorage.removeItem('tipoServicio');
+        localStorage.removeItem('nombreServicio');
+
         window.location.reload(true);
     };
 

@@ -47,8 +47,8 @@ const PagoServicios2 = () => {
               position: toast.POSITION.TOP_RIGHT
             });
           }
-          
-          if (data.length > 0) {
+          console.log(data)
+          if (data != 'Referencia no existe' ) {
             toast.success('Verificacion exitosa', {
               position: toast.POSITION.TOP_RIGHT
             });
@@ -121,7 +121,7 @@ const PagoServicios2 = () => {
       <Navbar />
       <ToastContainer />
       <div className="servicios-publicos">
-        <h2>PAGO DE SERVICIOS PUBLICOS</h2>
+        <h2>PAGO DE SERVICIOS PUBLICOS ({localStorage.getItem('nombreServicio')})</h2>
         <form className="formulario-servicios-publicos" onSubmit={handleSubmit}>
           <label htmlFor="reference">Número de Referencia:</label>
           <input
